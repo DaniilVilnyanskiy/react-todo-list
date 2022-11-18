@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  padding: 0 15px;
+}
+@media (min-width: 575.98px) {
+  .container {
+    max-width: 540px;
+    margin: auto;
+    padding: 0;
+  }
+}
+@media (min-width: 767.98px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1199.98px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.gap-2 {
+  gap: 12px;
+}
+.col-8 {
+  flex: 0 0 auto;
+  width: calc(66.666% - 15px);
+}
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.333%;
+}
+.Todo-list__new-todo {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+.Todo-list__new-todo input[type=text],
+.Todo-list__new-todo_input {
+  outline: none;
+  padding: 12px 18px;
+  width: 100%;
+  border-radius: 8px;
+  background: #9c9c9c;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  height: 49px;
+}
+.Todo-list__new-todo_input {
+  min-width: 277px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+.Todo-list__new-todo_input.file::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  box-shadow: 0 0 36px 58px #9c9c9c;
+}
+.Todo-list__new-todo button {
+  min-width: 200px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  height: 49px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.Todo-list__new-todo button:hover {
+  cursor: pointer;
+}
+.Todo-list__err {
+  color: #e76600;
+  position: absolute;
+  left: 3px;
+  top: -26px;
+}
+.Todo-list__list {
+  padding: 0;
+  margin: 0;
+}
+.Todo-list__list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+.Todo-list__list ul li {
+  padding: 12px 18px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid white;
+  color: white;
+  justify-content: space-between;
+  position: relative;
+}
+.Todo-list__list ul li p {
+  margin: 0;
+}
+.Todo-list__list ul li p:first-child {
+  text-align: left;
+}
+.Todo-list__list ul li p:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.Todo-list__list_li {
+  position: relative;
+}
+.Todo-list__list_li.todo-completed {
+  border: 1px solid rgba(255, 255, 255, 0.01);
+}
+.Todo-list__list_li.todo-completed:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.Todo-list__list_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  text-align: left;
+}
+.Todo-list__list_info input {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+.Todo-list__list_info_title {
+  display: flex;
+  padding-left: 16px;
+  margin-bottom: 15px;
+  gap: 3px;
+}
+.Todo-list__list_info_title input:first-child {
+  font-weight: 600;
+}
+.Todo-list__list_info_title input:nth-child(2) {
+  font-size: 16px;
+}
+.Todo-list__list_info_title input {
+  outline: none;
+  width: 100%;
+}
+.Todo-list__list_info_title.undisable input {
+  background: #9c9c9c;
+}
+.Todo-list__list_info_title .Todo-list__list_info_edits {
+  display: none;
+}
+@media screen and (max-width: 1080px) {
+  .Todo-list__list_info_title .Todo-list__list_info_edits {
+    display: block;
+  }
+}
+.Todo-list__list_info_title:hover .Todo-list__list_info_edits {
+  display: block;
+}
+.Todo-list__list_info_edits {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: white;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.Todo-list__list_info_edits:hover {
+  cursor: pointer;
+}
+.Todo-list__list_info p:last-child {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.Todo-list__list_info_file {
+  position: relative;
+}
+.Todo-list__list_info_file:hover .Todo-list__list_info_file-remove {
+  display: block;
+  cursor: pointer;
+}
+.Todo-list__list_info_file-remove {
+  display: none;
+  position: absolute;
+  left: -8px;
+  background: transparent;
+  border: none;
+  color: white;
+  top: 1px;
+}
+@media screen and (max-width: 1080px) {
+  .Todo-list__list_info_file-remove {
+    display: block;
+  }
+}
+.Todo-list__list_info_file-input {
+  padding-left: 18px;
+}
+.Todo-list__list_date {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.Todo-list__list_close {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  font-size: 12px;
+  z-index: 12;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,212 @@
+.Todo-list {
+
+  &__new-todo {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 16px;
+    position: relative;
+    input[type=text], &_input {
+      outline: none;
+      padding: 12px 18px;
+      width: 100%;
+      border-radius: 8px;
+      background: #9c9c9c;
+      border: 1px solid rgba(255,255,255,0.4);
+      height: 49px;
+    }
+    &_input {
+      min-width: 277px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      &.file::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 0px;
+        box-shadow: 0 0 36px 58px #9c9c9c;
+      }
+      input[type=file] {
+
+      }
+    }
+
+    button {
+      min-width: 200px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      height: 49px;
+      border: 1px solid rgba(255,255,255,0.4);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__err {
+    color: #e76600;
+    position: absolute;
+    left: 3px;
+    top: -26px;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 12px 18px;
+        display: flex;
+        background: rgba(255,255,255,0.3);
+        border: 1px solid white;
+        color: white;
+        justify-content: space-between;
+        position: relative;
+        p {
+          margin: 0;
+          &:first-child {
+            text-align: left;
+          }
+          &:last-child {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+          }
+        }
+      }
+    }
+    &_li {
+      position: relative;
+      &.todo-completed {
+        border: 1px solid rgba(255,255,255,0.01);
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+    &_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 60%;
+      text-align: left;
+      input {
+        background: transparent;
+        color: white;
+        font-size: 16px;
+        border: none;
+      }
+      &_title {
+        display: flex;
+        padding-left: 16px;
+        margin-bottom: 15px;
+        gap: 3px;
+        input {
+          &:first-child {
+            font-weight: 600;
+          }
+          &:nth-child(2) {
+            font-size: 16px;
+          }
+        }
+        input {
+          outline: none;
+          width: 100%;
+        }
+        &.disable {
+
+        }
+        &.undisable {
+          input {
+            background: #9c9c9c;
+          }
+        }
+        .Todo-list__list_info_edits {
+          display: none;
+          @media screen and (max-width: 1080px) {
+            display: block;
+          }
+        }
+        &:hover {
+          .Todo-list__list_info_edits {
+            display: block;
+          }
+        }
+      }
+      &_edits {
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        color: white;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      p {
+        &:first-child {
+
+        }
+        &:last-child {
+          font-size: 12px;
+          opacity: .9;
+        }
+      }
+      &_file {
+        position: relative;
+
+        &:hover {
+          .Todo-list__list_info_file-remove {
+            display: block;
+            cursor: pointer;
+          }
+        }
+        &-remove {
+          display: none;
+          position: absolute;
+          left: -8px;
+          background: transparent;
+          border: none;
+          color: white;
+          top: 1px;
+          @media screen and (max-width: 1080px) {
+            display: block;
+          }
+        }
+        &-input {
+          padding-left: 18px;
+        }
+      }
+    }
+    &_date {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    &_close {
+      position: absolute;
+      right: 3px;
+      top: 0px;
+      font-size: 12px;
+      z-index: 12;
+    }
+  }
+}

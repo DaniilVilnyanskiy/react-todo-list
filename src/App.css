@@ -28,7 +28,21 @@
 .App-link {
   color: #61dafb;
 }
-
+.App-header_time {
+  gap: 16px;
+}
+@media screen and (max-width: 991px) {
+  .App-header {
+    margin-bottom: 48px !important;
+    align-items: unset;
+    padding-top: 24px !important;
+  }
+  .App-header_time {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

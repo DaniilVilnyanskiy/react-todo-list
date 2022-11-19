@@ -267,7 +267,7 @@ function TodoList(props) {
         <div className="Todo-list container">
             <div className="Todo-list__new-todo">
                 {renderAlert()}
-                <div className="d-flex flex-column col-8 gap-2">
+                <div className="d-flex flex-column col-lg-8 gap-2">
                     <input
                         type="text"
                         placeholder="Write your todo"
@@ -281,7 +281,7 @@ function TodoList(props) {
                         onChange={changeInputTextInfo}
                     />
                 </div>
-                <div className="d-flex flex-column col-4 gap-2">
+                <div className="d-flex flex-column col-lg-4 gap-2">
                     <div className={inputFile ? "Todo-list__new-todo_input file" : "Todo-list__new-todo_input"}>
                         { renderInput() }
                         { getFileName(inputFile) }

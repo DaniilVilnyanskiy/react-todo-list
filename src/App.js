@@ -18,8 +18,12 @@ function App() {
         <div className="App">
           <header className="App-header container">
             <h1>Todo list</h1>
-            <span>Создано: 17.11.2022</span>
-            <span>Время: {time}</span>
+            <div className="d-flex App-header_time">
+                <span>Создано: </span>
+                <span>17.11.2022</span>
+                <span>Время: </span>
+                <span>{time}</span>
+            </div>
           </header>
           <TodoList HandleChild={GetFilterData}/>
         </div>

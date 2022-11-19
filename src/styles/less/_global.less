@@ -40,11 +40,19 @@
 .gap-2 {
   gap: 12px
 }
-.col-8 {
+.col-lg-8 {
   flex: 0 0 auto;
-  width: calc(66.666% - 15px);
+  width: 100%;
+  @media @lg-min {
+    flex: 0 0 auto;
+    width: calc(66.666% - 15px);
+  }
 }
-.col-4 {
+.col-lg-4 {
   flex: 0 0 auto;
-  width: 33.333%;
+  width: 100%;
+  @media @lg-min {
+    flex: 0 0 auto;
+    width: 33.333%;
+  }
 }
